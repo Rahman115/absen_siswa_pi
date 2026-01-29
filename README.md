@@ -1,7 +1,7 @@
 # Absen_siswa_pi
 
 ## Menjalankan Sistem Lengkap:
-```bash
+```shell
 
 # 1. Start database
 sudo systemctl start mysql
