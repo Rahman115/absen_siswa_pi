@@ -1,0 +1,16 @@
+  GNU nano 7.2                  scanner-api.service *                         
+[Unit]
+Description=Scanner API Servise
+After=network.target mysql.service
+Wants=mysql.service
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/var/www/html/api
+ExecStart=/usr/bin/python3 /var/www/html/api/scanner_api.py
+Restart=always
+RestartSec=10
+
+[install]
+WantedBy=multi-user.target  

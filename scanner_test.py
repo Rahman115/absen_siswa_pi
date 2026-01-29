@@ -6,7 +6,7 @@ import sys
 
 # Cari device USB scanner
 # Ganti VID/PID dengan scanner Anda
-dev = usb.core.find(idVendor=0xffff, idProduct=0x0035)
+dev = usb.core.find(idVendor=0x9901, idProduct=0x301)
 
 if dev is None:
     print("Scanner tidak ditemukan!")

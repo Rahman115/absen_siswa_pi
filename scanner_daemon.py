@@ -14,8 +14,9 @@ from datetime import datetime
 
 class ScannerDaemon:
     def __init__(self):
-        self.api_url = "http://localhost:5000/api/scan"
-        self.running = True
+#        self.api_url = "http://localhost:5000/api/scan"
+        self.api_url = "http://192.168.1.11/api/scan"
+	self.running = True
         self.device = None
         self.setup_scanner()
     
@@ -25,6 +26,7 @@ class ScannerDaemon:
         
         # Try common scanner VID/PID
         scanner_ids = [
+	    (0x9901, 0x301),   # use scanner
             (0x1a86, 0x7523),  # Generic CH340
             (0x0c2e, 0x0b00),  # Datalogic
             (0x05fe, 0x1010),  # Honeywell
@@ -106,7 +108,7 @@ class ScannerDaemon:
     
     def simulate_scanner(self):
         """Simulate scanner input for testing"""
-        test_nis = ['2023001', '2023002', '2023003', '2023004', '2023005']
+        test_nis = ['2026001', '2026002', '2026003', '2026004', '2026005']
         import random
         
         while self.running:
